@@ -20,9 +20,9 @@ class node:
 
 chars=['a','b','c','d','e','f']
 freq=[5,9,12,13,16,45]
-nodes[]
+nodes=[]
 for x in range(len(chars)):
-    heapq.heappush(nodes, node(freq[x],char[x]))
+    heapq.heappush(nodes, node(freq[x],chars[x]))
 
 while len(nodes)>1:
     left=heapq.heappop(nodes)
