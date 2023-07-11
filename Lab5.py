@@ -6,7 +6,6 @@ class Node:
         self.left=left
         self.right=right
         self.huff=''
-
     def __lt__(self, nxt):
         return self.freq< nxt.freq
 def print_nodes(node,val=''):
@@ -56,7 +55,27 @@ def decode_text(encoded_text, starting_node):
     return decoded_text
 
 starting_node = nodes[0]
-
 encoded_text = input("Enter the encoded text: ")
 decoded_text = decode_text(encoded_text, starting_node)
 print("Decoded text:", decoded_text)
+def encode_text(text, starting_node):
+    encoding_map = {}
+
+    def traverse_tree(node, code=''):
+        if node.left:
+            traverse_tree(node.left, code + '0')
+        if node.right:
+            traverse_tree(node.right, code + '1')
+        if not node.left and not node.right:
+            encoding_map[node.symbol] = code
+
+    traverse_tree(starting_node)
+
+    encoded_text = ''
+    for char in text:
+        encoded_text += encoding_map[char]
+
+    return encoded_text
+text_input = input("Enter text to encode: ")
+encoded_binary_text = encode_text(text_input, starting_node)
+print("Encoded binary text:", encoded_binary_text)
