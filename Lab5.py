@@ -39,4 +39,24 @@ while len(nodes)>1:
     newNode=Node(left.freq+right.freq, left.symbol+right.symbol, left, right)
     heapq.heappush(nodes, newNode)
 print_nodes(nodes[0])
+def decode_text(encoded_text, starting_node):
+    decoded_text = ''
+    current_node = starting_node
 
+    for bit in encoded_text:
+        if bit == '0':
+            current_node = current_node.left
+        else:
+            current_node = current_node.right
+
+        if not current_node.left and not current_node.right:
+            decoded_text += current_node.symbol
+            current_node = starting_node
+
+    return decoded_text
+
+starting_node = nodes[0]
+
+encoded_text = input("Enter the encoded text: ")
+decoded_text = decode_text(encoded_text, starting_node)
+print("Decoded text:", decoded_text)
