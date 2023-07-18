@@ -42,12 +42,14 @@ def find_optimal_route(graph, start, destination):
     return route
 graph={}
 n=int(input("Enter the no of toll stations:"))
-for i in range(1,n):
+for i in range(0,n):
     name=input("Enter station name:")
-    station{}
-    for i in range(1,n-1):
-        
-
+    station={}
+    for i in range(0,n-1):
+        name1=input("")
+        dist=int(input(""))
+        station[name1]=dist
+    graph[name]=station
 #graph = {
 #'A': {'B': 3, 'C': 99, 'D': 7, 'E': 99},
 #'B': {'A': 3, 'C': 4, 'D': 2, 'E': 99},
@@ -57,8 +59,8 @@ for i in range(1,n):
 #}
 
 
-start_location = 'A'
-destination_location = 'E'
+start_location = input("Enter starting location:")
+destination_location =input("Enter destination:")
 
 optimal_route = find_optimal_route(graph, start_location, destination_location)
 
