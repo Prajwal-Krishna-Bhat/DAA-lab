@@ -58,13 +58,13 @@ for i in range(0,n):
 #'E': {'A': 99, 'B': 99, 'C': 6, 'D': 4}
 #}
 
+while True:
+    start_location = input("Enter starting location:")
+    destination_location =input("Enter destination:")
 
-start_location = input("Enter starting location:")
-destination_location =input("Enter destination:")
+    optimal_route = find_optimal_route(graph, start_location, destination_location)
 
-optimal_route = find_optimal_route(graph, start_location, destination_location)
-
-if optimal_route is None:
-    print("No valid route exists from the start to the destination.")
-else:
-    print("Optimal Route:", ' -> '.join(optimal_route))
+    if optimal_route is None:
+        print("No valid route exists from the start to the destination.")
+    else:
+        print("Optimal Route:", ' -> '.join(optimal_route))
