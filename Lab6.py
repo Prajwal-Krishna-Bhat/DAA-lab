@@ -14,8 +14,15 @@ def knapsack_max_profit(weights, costs, capacity):
             selected_items.append(i-1)
             total_weight-=weights[i-1]
     return table[num_items][capacity],selected_items
-weights=[2,3,4,5]
-costs=[10,20,30,40]
+n=int(input("Enter the index:"))
+weights=[]
+for i in range(0,n):
+    l=input(f"index {i+1}:")
+    weights.append(l)
+costs=[]
+for i in range(0,n):
+    m=input(f"cost {i+1}:")
+    costs.append(m)
 capacity=10
 max_profit, selected_items=knapsack_max_profit(weights, costs, capacity)
 print("Maximum profit:",max_profit)
