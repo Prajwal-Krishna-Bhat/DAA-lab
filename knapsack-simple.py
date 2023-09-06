@@ -12,10 +12,10 @@ n = int(input("Enter the number of items: "))
 profit = []
 weight = []
 for i in range(n):
-  item_profit = int(input(f"Enter profit for item {i}: "))
-  profit.append(item_profit)
-  item_wt = int(input(f"Enter weight of item {i}: "))
-  weight.append(item_wt)
+    item_profit = int(input(f"Enter profit for item {i}: "))
+    profit.append(item_profit)
+    item_wt = int(input(f"Enter weight of item {i}: "))
+    weight.append(item_wt)
 
 W = int(input("Enter total Knapsack Capacity: "))
 print(knapSack(W, weight, profit, n))
